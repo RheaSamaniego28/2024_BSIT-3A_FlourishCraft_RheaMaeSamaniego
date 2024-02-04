@@ -1,60 +1,62 @@
-*{
-    margin: 0;
-    padding: 0;
+* {
+    margin: 10;
+    padding: 20;
     box-sizing: border-box;
     font-family: sans-serif;
 }
 
-body{
-    background: lightslategray;
+body {
+    background: #E7DCC3;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
 }
 
-.container{
+.container {
     position: relative;
-    width: 100%;
+    width: 80%;
     min-width: 1000px;
     min-height: 1000px;
-    background: #fff;
-    margin: 50px;
+    background: #E7DCC3;
+    margin: 0px;
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    box-shadow: 0 35px 55px rgba(0,0,0,0.2);
+    grid-template-columns: 1.2fr 3fr;
+    box-shadow: 0 35px 55px rgba(0, 0, 0, 0.2);
 }
 
-.container .left{
+.container .left {
     position: relative;
-    background: #167266;
+    background: #E7CEB2; /* Updated color */
+    padding: 15px;
+}
+
+.container .right {
+    position: relative;
+    background: #FFF; /* Updated color to white */
     padding: 40px;
 }
 
-.container .right{
-    position: relative;
-    background: #fff;
-    padding: 40px;
-}
-
-.profileText{
+.profileText {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    border-bottom: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.profileText .profileImg{
+.profileText .profileImg {
     position: relative;
     width: 200px;
     height: 200px;
     border-radius: 50%;
     overflow: hidden;
+    border: 5px solid #E7CEB2;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5)
 }
 
-.profileText .profileImg img{
+.profileText .profileImg img {
     position: absolute;
     top: 0;
     left: 0;
@@ -63,61 +65,76 @@ body{
     object-fit: cover;
 }
 
-.profileText h2{
-    color: #fff;
+.profileText h2 {
+    color: #000; /* Change to black */
     font-size: 1.5em;
     margin-top: 20px;
     text-transform: uppercase;
     text-align: center;
     font-weight: 600;
     line-height: 1.4em;
+    padding: 50px;
 }
 
-.profileText h2 span{
+.profileText h2 span {
     font-size: 0.7em;
     font-weight: 300;
 }
 
-.Info{
+.Info {
     padding: 40px;
 }
 
-.title{
-    color: #fff;
+.title {
+    color: #000; /* Change to black */
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: 0.4;
     margin-bottom: 20px;
 }
-
-.Info ul{
+.profileText .profile-word {
+    background-color: #E7DCC3; /* Set the background color */
+    padding: 10px; /* Add padding to the word */
+}
+.Info ul {
     position: relative;
 }
 
-.Info ul li{
+.Info ul li {
     position: relative;
     list-style: none;
     margin: 10px 0;
     cursor: pointer;
 }
 
-.Info ul li .icon{
+.Info ul li .icon {
     display: inline-block;
     width: 30px;
     font-size: 20px;
     color: #0af6d7;
 }
 
-.Info ul li span{
-    color: #fff;
+.Info ul li span {
+    color: #000; /* Change to black */
     font-weight: 200;
 }
 
-.Info .education{
+.Info .education {
     margin-bottom: 15px;
 }
 
-.Info .education h5{
-    color: #06f6d7;
+.Info .education h5 {
+    color: #000;
     font-weight: 500;
+}
+/* Add this to your style.css file */
+
+.no-bullets {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.no-bullets li {
+    margin-bottom: 10px; /* Add some margin between each list item if desired */
 }
