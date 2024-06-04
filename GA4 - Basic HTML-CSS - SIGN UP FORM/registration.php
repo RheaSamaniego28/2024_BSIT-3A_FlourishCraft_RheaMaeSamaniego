@@ -9,28 +9,8 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        body {
-            background: #f1add9;
-        }
-        .registration-form {
-            background: #ffffff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px 0px #0000000f;
-            margin-bottom: 20px;
-        }
-        .registration-form .form-group label {
-            font-weight: bold;
-        }
-        .registration-form .btn-success {
-            background-color: #28a745;
-            border-color: #28a745;
-        }
-        .registration-form .btn-link {
-            color: #6c757d;
-        }
-    </style>
+    <link rel="stylesheet" href="styles/registration.css">
+
 </head>
 <body>
     <div class="container">
@@ -43,7 +23,7 @@ session_start();
                             <p class="card-text">You have successfully registered. Please <a href="login.php" class="card-link">login here</a>.</p>
                         </div>
                     </div>
-                    <?php unset($_SESSION['registration_success']); ?> <!-- Unset the session variable after displaying the message -->
+                    <?php unset($_SESSION['registration_success']); ?>
                 <?php else: ?>
                     <div class="registration-form">
                         <h3 class="display-4 text-center mb-4">Registration Form</h3>
