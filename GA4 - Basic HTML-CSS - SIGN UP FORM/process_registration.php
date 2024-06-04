@@ -17,18 +17,15 @@ $username =  $_POST['r_username'];
 $password = $_POST['r_password'];
 $confirm_password = $_POST['r_confirm_password'];
 
-// Function to check if passwords match
 function chk_pass($p1, $p2) {
     return ($p1 == $p2) ? true : false;
 }
 
-// Check if passwords match
 if (!chk_pass($password, $confirm_password)) {
     header("location: registration.php?error=password_mismatch");
     exit;
 }
 
-// Check if username already exists
 $stmt = $conn->prepare("SELECT Customer_id FROM customers WHERE username = ?");
 $stmt->bind_param("s", $username);
 $stmt->execute();
@@ -37,15 +34,12 @@ $count_result = $stmt->num_rows;
 $stmt->close();
 
 if ($count_result > 0) {
-    // Username already exists
     header("location: registration.php?error=user_already_exist");
     exit;
 } else {
-    // User can register
     $stmt = $conn->prepare("INSERT INTO customers (Name, Age, Gender, Phone_Number, House_Number, Zone, Barangay, City, Province, Region, Zip_Code, Email, Username, Password)
                         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
-    // Use plain text password
     $stmt->bind_param("ssssssssssssss", $name, $age, $gender, $phone, $house, $zone, $barangay, $city, $province, $region, $zip, $email, $username, $password);
     $execute_query = $stmt->execute();
 
@@ -53,7 +47,6 @@ if ($count_result > 0) {
         header("location: registration.php?error=insert_failed");
         exit;
     } else {
-        // Set success message in session
         session_start();
         $_SESSION['registration_success'] = true;
         header("location: registration.php");
